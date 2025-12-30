@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Iyaaa ❤️</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+      body {
+        background: linear-gradient(180deg, #ffdde1, #ee9ca7, #ffd6e8);
+        color: #333;
+        overflow-x: hidden;
+      }
+      section {
+        min-height: 100vh;
+        padding: 60px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      h1,
+      h2 {
+        margin-bottom: 15px;
+      }
+      p {
+        line-height: 1.8;
+      }
+      button {
+        padding: 12px 28px;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .yes {
+        background: #ff4d6d;
+        color: white;
+      }
+      .no {
+        background: #888;
+        color: white;
+        position: absolute;
+      }
+
+      .card {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        max-width: 650px;
+        margin: 25px auto;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      .fade {
+        animation: fade 1s forwards;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .heart {
+        position: fixed;
+        top: -10px;
+        animation: fall linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh);
+          opacity: 0;
+        }
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+      .gallery img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .counter {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+      }
+      .popup div {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        max-width: 400px;
+        text-align: center;
+      }
+      .close {
+        margin-top: 15px;
+        background: #ff4d6d;
+        color: white;
+      }
+
+      #hugAnim {
+        font-size: 40px;
+        animation: hug 1.5s infinite;
+      }
+      @keyframes hug {
+        0% {
+          letter-spacing: 40px;
+          transform: scale(1);
+        }
+        50% {
+          letter-spacing: 5px;
+          transform: scale(1.2);
+        }
+        100% {
+          letter-spacing: 40px;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- OPENING -->
+    <section id="open">
+      <h1>Sebelum lanjut…</h1>
+      <h2>kamu sayang aku nggak?</h2>
+      <div style="margin-top: 25px">
+        <button class="yes" onclick="goNext()">Iya, sayang banget ❤️</button>
+        <button class="no" id="noBtn">Tidak 😐</button>
+      </div>
+    </section>
+
+    <!-- ANIMASI -->
+    <section id="anim" style="display: none">
+      <h1 class="fade">Jawaban kamu bikin aku kuat…</h1>
+      <p class="fade">walaupun jarak sering nyebelin.</p>
+      <h2 id="load">0%</h2>
+    </section>
+
+    <!-- CERITA LDR -->
+    <section id="story" style="display: none">
+      <div class="card fade">
+        <h2>Hai Iyaaa ❤️</h2>
+        <p>
+          Kita nggak selalu bisa ketemu. Nggak selalu bisa pelukan. Kadang cuma
+          bisa saling cerita lewat layar.
+        </p>
+        <p>
+          Tapi dari semua jarak itu, satu hal yang nggak pernah jauh:
+          <b>rasa sayang aku ke kamu.</b>
+        </p>
+      </div>
+
+      <div class="card fade">
+        <h2>Tentang Kita</h2>
+        <p>
+          Makasih ya… udah mau bertahan sama aku. Di kondisi yang nggak selalu
+          mudah.
+        </p>
+        <p>
+          Makasih udah mau jadi pasangan hidupku, makasih udah jadi bagian dari
+          cerita hidupku.
+        </p>
+        <p>
+          Maaf kalau aku belum bisa jadi pasangan yang sempurna. Tapi
+          percayalah…
+          <b>aku akan selalu berusaha.</b>
+          hehehe
+        </p>
+      </div>
+
+      <div class="card fade">
+        <h2>Jarak Ini ⏳</h2>
+        <p>Sejak 21 Mei 2021</p>
+        <div class="counter" id="counter"></div>
+        <p style="margin-top: 10px">
+          Bukan hitungan hari yang bikin kita kuat, tapi pilihan untuk tetap
+          saling pulang.
+        </p>
+      </div>
+
+      <div class="card fade">
+        <h2>Kenangan Kita 📸</h2>
+        <p>Foto-foto ini jadi pengingat… kalau jarak cuma sementara.</p>
+        <div class="gallery">
+          <img src="foto1.jpg" />
+          <img src="foto2.jpg" />
+          <img src="foto3.jpg" />
+          <img src="foto4.jpg" />
+        </div>
+      </div>
+
+      <div class="card fade">
+        <h2>Janji Kecil dari Iyo</h2>
+        <p>Kalau kamu capek karena jarak, aku nggak akan nambah beban.</p>
+        <p>
+          Kalau kamu rindu, aku mungkin belum bisa hadir fisik… tapi
+          <b>aku akan selalu ada untukmu.</b>
+        </p>
+        <p><b>Jangan sungkan kepada diriku yaa..</b></p>
+      </div>
+
+      <div class="card fade">
+        <h2>Mode Istri (Latihan 😄)</h2>
+        <p>
+          ✔ LDR bukan alasan nyerah
+          <br />✔ Ribut diselesaikan, bukan dihilangkan <br />✔ Pulang tetap
+          satu tujuan
+        </p>
+      </div>
+
+      <button class="yes" onclick="openPop()">Aku milik kamu 💍</button>
+      <br /><br />
+      <button class="yes" onclick="openHug()">Aku kangen 🫂</button>
+    </section>
+
+    <!-- POPUP AKU MILIK KAMU -->
+    <div class="popup" id="pop">
+      <div>
+        <h2>Iyo & Iyaaa ❤️</h2>
+        <p>
+          Jarak boleh jauh. Tapi niat aku ke kamu:
+          <b>dekat dan serius.</b>
+        </p>
+        <button class="close" onclick="closePop()">❤️</button>
+      </div>
+    </div>
+
+    <!-- POPUP PELUK -->
+    <div class="popup" id="hug">
+      <div>
+        <div id="hugAnim">❤️🫂❤️</div>
+        <h2>Sini…</h2>
+        <p>
+          Kalau aku nggak bisa peluk kamu sekarang, biarin animasi ini wakilin
+          dulu ya.
+        </p>
+        <p><b>Aku kangen.</b></p>
+        <button class="close" onclick="closeHug()">🫶</button>
+      </div>
+    </div>
+
+    <!-- MUSIK LOKAL -->
+    <audio id="bgm" autoplay loop>
+      <source src="lagu.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      // tombol kabur
+      const noBtn = document.getElementById("noBtn");
+      noBtn.addEventListener("mouseover", () => {
+        noBtn.style.left = Math.random() * 80 + "%";
+        noBtn.style.top = Math.random() * 80 + "%";
+      });
+
+      // transisi + trigger musik
+      function goNext() {
+        document.getElementById("bgm").play();
+        document.getElementById("open").style.display = "none";
+        document.getElementById("anim").style.display = "flex";
+        let i = 0;
+        let load = setInterval(() => {
+          i++;
+          document.getElementById("load").innerText = i + "%";
+          heart();
+          if (i >= 100) {
+            clearInterval(load);
+            setTimeout(() => {
+              document.getElementById("anim").style.display = "none";
+              document.getElementById("story").style.display = "block";
+            }, 800);
+          }
+        }, 25);
+      }
+
+      // animasi hati
+      function heart() {
+        let h = document.createElement("div");
+        h.className = "heart";
+        h.innerHTML = "❤️";
+        h.style.left = Math.random() * 100 + "vw";
+        h.style.fontSize = Math.random() * 20 + 10 + "px";
+        h.style.animationDuration = Math.random() * 3 + 2 + "s";
+        document.body.appendChild(h);
+        setTimeout(() => h.remove(), 5000);
+      }
+
+      // counter hari
+      const start = new Date("2021-05-21");
+      setInterval(() => {
+        const now = new Date();
+        const diff = Math.floor((now - start) / 86400000);
+        document.getElementById("counter").innerText =
+          diff + " hari bareng kamu 💖";
+      }, 1000);
+
+      // popup
+      function openPop() {
+        document.getElementById("pop").style.display = "flex";
+      }
+      function closePop() {
+        document.getElementById("pop").style.display = "none";
+      }
+      function openHug() {
+        document.getElementById("hug").style.display = "flex";
+      }
+      function closeHug() {
+        document.getElementById("hug").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
